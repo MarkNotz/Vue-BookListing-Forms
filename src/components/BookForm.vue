@@ -11,11 +11,11 @@
     </div>
 
     <div>
-      <label for="bought">
+      <label for="ownership">
         Bought
         <input v-model="bookData.ownership" type="radio" name="ownership" value="bought">
       </label>
-      <label for="borrowed">
+      <label for="ownership">
         Borrowed
         <input v-model="bookData.ownership" type="radio" name="ownership" value="borrowed">
       </label>
@@ -36,13 +36,14 @@ export default {
         bookTitle: "",
         bookAuthor: "",
         finishedReading: false,
-        ownership: []
+        ownership: ""
       }
     };
   },
   methods: {
     bookSubmit(bookData) {
       this.$emit("addBook", bookData);
+      this.text="";
     }
   }
 };
