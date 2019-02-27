@@ -3,8 +3,7 @@
     {{book.title}}&emsp;:&emsp; {{book.author}}&emsp;:&emsp;
     <span v-if="book.finishedReading">Read</span>
     <span v-else>-Not Read</span>&emsp;:&emsp;
-    <span v-if="book.ownership">Bought</span>
-    <span v-else>Borrowed</span>
+    {{book.ownership}}
   </li>
 </template>
 

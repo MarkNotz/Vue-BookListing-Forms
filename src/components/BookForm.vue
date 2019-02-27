@@ -11,20 +11,23 @@
     </div>
 
     <div>
+      <form>
       <label for="ownership">
         Bought
-        <input v-model="bookData.ownership" type="radio" name="ownership" value="bought">
+        <input v-model="bookData.ownership" type="radio" name="ownership" value="Bought" >
       </label>
       <label for="ownership">
         Borrowed
-        <input v-model="bookData.ownership" type="radio" name="ownership" value="borrowed">
+        <input v-model="bookData.ownership" type="radio" name="ownership" value="Borrowed" >
       </label>
+      </form>
     </div>
     <div class="special">
       <button type="submit" name="button">Add Book</button>
     </div>
   </form>
 </template>
+
 
 <script>
 export default {
@@ -35,7 +38,7 @@ export default {
       bookData: {
         bookTitle: "",
         bookAuthor: "",
-        finishedReading: false,
+        finishedReading: "",
         ownership: ""
       }
     };
@@ -43,7 +46,14 @@ export default {
   methods: {
     bookSubmit(bookData) {
       this.$emit("addBook", bookData);
+this.bookData.bookTitle = '';
+this.bookData.bookAuthor = '';
+this.bookData.finishedReading = false;
+this.bookData.ownership= ''
+event.target.reset();
     }
+
+
   }
 };
 </script>
