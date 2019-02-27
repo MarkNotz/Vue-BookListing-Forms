@@ -6,22 +6,22 @@
     <div class="special">
       <label for="finishedReading">
         Finished Reading
-        <input  v-model="bookData.finishedReading" type="checkbox">
-              </label>
+        <input v-model="bookData.finishedReading" type="checkbox" name="finishedReading">
+      </label>
     </div>
 
     <div>
       <label for="bought">
         Bought
-        <input v-model="bookData.ownership" type="radio" value="bought">
+        <input v-model="bookData.ownership" type="radio" name="ownership" value="bought">
       </label>
       <label for="borrowed">
         Borrowed
-        <input v-model="bookData.ownership" type="radio" value="borrowed">
+        <input v-model="bookData.ownership" type="radio" name="ownership" value="borrowed">
       </label>
     </div>
     <div class="special">
-    <button type="submit" name="button">Add Book</button>
+      <button type="submit" name="button">Add Book</button>
     </div>
   </form>
 </template>
@@ -50,7 +50,7 @@ export default {
 
 <style>
 .special {
-    padding: 1em 0 0 0;
+  padding: 1em 0 0 0;
 }
 
 form {
