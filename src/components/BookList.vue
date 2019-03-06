@@ -3,7 +3,7 @@
     <h1>{{title}}</h1>
     <input type="text" placeholder="Search Books" v-model="searchInput">
     <ul class="exists">
-      <book-item v-for='book in books' :key='book.id' :book='book'></book-item>
+      <book-item v-for='book in searchedbooks' :key='book.id' :book='book'></book-item>
     </ul>
     <hr>
     <h2>Filtered books by Ownership</h2>
@@ -11,7 +11,7 @@
       <option v-for="filter in filters">{{filter}}</option>
     </select>
     <ul class="exists">
-      <book-item v-for='book in searchedBooks' :key='book.id' :book='book'></book-item>
+      <book-item v-for='book in filteredBooks' :key='book.id' :book='book'></book-item>
     </ul>
     <br><hr>
     <book-form @addBook='appendBook'></book-form>
@@ -35,7 +35,7 @@ export default {
         { title: "Amusing Ourselves to Death", author: "Neil Postman", finishedReading: true, ownership: "borrowed" }
       ],
       filters: ["borrowed", "bought"],
-      holding: "bought",
+      holding: "borrowed",
       searchInput: ""
     };
      },
