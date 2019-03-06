@@ -46,7 +46,7 @@ export default {
 
   computed: {
     filteredBooks() {
-      return _.filter(this.books, ["ownership", this.holding])
+      return _.filter(this.books, ["ownership", this.holding]);
     },
     searchBooks() {
       const searchFilter = book => {
