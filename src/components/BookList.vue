@@ -49,12 +49,11 @@ export default {
       return _.filter(this.books, ["ownership", this.holding])
     },
     searchBooks() {
-      const searchFilter = book ==> {
+      const searchFilter = book => {
         return book.title.toLowerCase().match(this.searchInput.toLowerCase());
         };
         return _.filter(this.books, searchFilter);
       }
-    }
   },
 
   methods: {
